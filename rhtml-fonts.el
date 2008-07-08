@@ -107,12 +107,26 @@ colorization."
 ;; ERB faces - each type of ERB tag has it's own face properties
 
 (defface erb-face
-  `((t (:background "snow2")))
+  '((((class color) (min-colors 88) (background dark))
+     ;;:background "blue3")
+     :background "dark green")
+    (((class color) (min-colors 88) (background light))
+     ;;:background "lightgoldenrod2")
+     :background "azure")
+    (((class color) (min-colors 16) (background dark))
+     :background "blue3")
+    (((class color) (min-colors 16) (background light))
+     :background "azure")
+    (((class color) (min-colors 8))
+     :background "blue")
+    (((type tty) (class mono))
+     :inverse-video t)
+    (t :background "gray"))
   "Default inherited face for ERB tag body"
   :group 'rhtml-faces)
 
 (defface erb-delim-face
-  `((t (:background "snow3")))
+  '((t (:inherit font-lock-preprocessor-face :bold t :italic t)))
   "Default inherited face for ERB tag delimeters"
   :group 'rhtml-faces)
 
@@ -132,17 +146,20 @@ colorization."
   :group 'rhtml-faces)
 
 (defface erb-out-delim-face
-  `((t (:inherit erb-delim-face :weight bold :foreground "darkred")))
+  `((((background dark)) :foreground "lightred")
+    (t (:inherit erb-delim-face :weight bold :foreground "darkred")))
   "Basic face for Ruby embedded into HTML"
   :group 'rhtml-faces)
 
 (defface erb-comment-face
-  `((t (:inherit erb-face :weight bold :foreground "darkgreen")))
+  `((((background dark)) :foreground "lightgreen")
+    (t (:inherit erb-face :weight bold :foreground "darkgreen")))
   "Basic face for Ruby embedded into HTML"
   :group 'rhtml-faces)
 
 (defface erb-comment-delim-face
-  `((t (:inherit erb-delim-face :weight bold :foreground "darkgreen")))
+  `((((background dark)) :foreground "lightgreen")
+    (t (:inherit erb-delim-face :weight bold :foreground "darkgreen")))
   "Basic face for Ruby embedded into HTML"
   :group 'rhtml-faces)
 
