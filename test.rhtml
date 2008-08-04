@@ -49,7 +49,19 @@
       <br>
       <br
       df
-      
+
+	 <% if true -%>
+	   <%= "true!" -%>
+	 <% else -%>
+	   <%= "false!" -%>
+	 <% end -%>
+
+	 <%- if true -%>
+	   <%= "true!" -%>
+	 <%- else -%>
+	   <%= "false!" -%>
+	 <%- end -%>
+
       </br>
     <% else -%>
       <span class='alert'>(not scored!)</span>

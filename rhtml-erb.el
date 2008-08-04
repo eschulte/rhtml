@@ -74,7 +74,7 @@ I don't think this has any restrictions.")
   (concat rhtml-erb-open-delim "\\|" rhtml-erb-close-delim))
 
 (defconst rhtml-erb-tag-open-re
-  (concat rhtml-erb-open-delim "\\(?:-=\\|[=#]?\\)?"))
+  (concat rhtml-erb-open-delim "\\(?:-=\\|[-=#]?\\)?"))
 
 ;; specific tags
 (defconst rhtml-erb-exec-tag-open-re
