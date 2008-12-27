@@ -38,7 +38,7 @@
 
 (defun rhtml-find-partial (partial)
   (interactive "MPartial: ")
-  (find-file (concat "_" partial ".rhtml")))
+  (find-file (concat "_" partial "\\.html\\.erb")))
 
 ;; utility functions
 

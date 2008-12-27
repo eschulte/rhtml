@@ -53,7 +53,7 @@
   ;; disable if you don't want it...
   (rhtml-activate-fontification))
 
-(add-to-list 'auto-mode-alist '("\\.rhtml$" . rhtml-mode))
+(add-to-list 'auto-mode-alist '("\\.html\\.erb$" . rhtml-mode))
 
 (define-key ruby-mode-map
   "\C-c\C-v" (lambda () (interactive) (toggle-buffer 'rails-view)))
@@ -63,7 +63,7 @@
 (defun extract-partial (begin end partial-name)
   (interactive "r\nsName your partial: ")
   (kill-region begin end)
-  (find-file (concat "_" partial-name ".rhtml"))
+  (find-file (concat "_" partial-name "\\.html\\.erb"))
   (yank)
   (pop-to-buffer nil)
   (insert (concat "<%= render :partial => '" partial-name "' %>\n")))
