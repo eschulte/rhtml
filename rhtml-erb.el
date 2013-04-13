@@ -123,7 +123,7 @@ line, respectively."
          (if (rhtml-scan-for-erb-tags '(erb-middle)) (- sgml-basic-offset) 0)))))
 
 (defconst rhtml-erb-block-open-re
-  (concat "[A-Za-z_)][ ]+do[ ]+\\(?:|[A-Za-z_, ]*|\\)?[ ]*" rhtml-erb-tag-close-re))
+  (concat "[]A-Za-z_)}][ ]+do[ ]+\\(?:|[A-Za-z_, ]*|\\)?[ ]*" rhtml-erb-tag-close-re))
 
 (defconst rhtml-erb-brace-block-open-re
   (concat "[ ]+{[ ]+\\(?:|[A-Za-z_, ]*|\\)?[ ]*" rhtml-erb-tag-close-re)
