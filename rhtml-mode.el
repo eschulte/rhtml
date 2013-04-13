@@ -43,6 +43,7 @@
 ;; don't require if you don't want it...
 (require 'rhtml-sgml-hacks) ;; indent erb with sgml
 
+;;;###autoload
 (define-derived-mode rhtml-mode
   html-mode "RHTML"
   "Embedded Ruby Mode (RHTML)"
@@ -51,6 +52,7 @@
   ;; disable if you don't want it...
   (rhtml-activate-fontification))
 
+;;;###autoload
 (add-to-list 'auto-mode-alist '("\\.html\\.erb$" . rhtml-mode))
 
 (define-key ruby-mode-map
