@@ -5,13 +5,18 @@
 
 ;; Ripped from the previous rhtml-mode, sorry about making it break
 ;; too :( -- pst
+(defun rails-root (file-path)
+  "Guess the project root of the given FILE-PATH."
+  (or (vc-git-root file-path)
+      (vc-svn-root file-path)
+      file-path))
 
 (defun rhtml-controller-name-from-view ()
   (let* ((dirname (expand-file-name "."))
          (controller-with-module
           (and (string-match "app/views/\\(.*\\)$" dirname)
                (match-string 1 dirname))))
-    (concat (rails-root)
+    (concat (rails-root (expand-file-name "."))
             "/app/controllers/"
             controller-with-module
             "_controller.rb")))
